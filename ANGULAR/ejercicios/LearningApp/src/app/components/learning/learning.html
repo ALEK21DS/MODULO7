@@ -1,0 +1,17 @@
+<div>
+    <div>
+        <h1>COLEGIO EMILIO UZCATEGUI </h1>
+        <div>
+            <h2>CURSO {{learnig.course.id}} - {{learnig.course.name}}</h2>
+        
+        </div>
+        <div>
+            <ul>
+                <h3>ESTUDIANTES</h3>
+                @for (item of learnig.course.students; track $index) {
+                <li> {{item.name}} {{item.surname}} ({{item.identification}})</li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
