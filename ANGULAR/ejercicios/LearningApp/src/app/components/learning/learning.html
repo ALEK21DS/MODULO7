@@ -2,26 +2,10 @@
     <h1 class="text-center my-3">COLEGIO EMILIO UZCATEGUI </h1>
     <div class="card">
         <div class="card-header">
-            <h2>CURSO {{learnig.course.id}} - {{learnig.course.name}}</h2>
-
+            <course-view [course]="learnig.course"></course-view>
         </div>
         <div class="card-body">
-            <table class="table table-striped">
-                <thead>
-                    <th>CEDULA</th>
-                    <th>NOMBRE</th>
-                    <th>APELLIDO</th>
-                </thead>
-                <tbody>
-                    @for (item of learnig.course.students; track $index) {
-                    <tr>
-                        <td> {{item.identification}} </td>
-                        <td> {{item.name}} </td>
-                        <td> {{item.surname}} </td>
-                    </tr>
-                    }
-                </tbody>
-            </table>
+            <students-list [students]="learnig.course.students"></students-list>
         </div>
     </div>
 </div>
