@@ -8,7 +8,8 @@ WORKDIR /app
 COPY package*.json ./
 
 # Instala las dependencias
-RUN npm install
+RUN npm install -g @angular/cli \
+    && npm install
 
 # Copia el resto del código fuente
 COPY . .
@@ -16,5 +17,5 @@ COPY . .
 # Expone el puerto 4200 (Angular por defecto)
 EXPOSE 4200
 
-# Ejecuta la aplicación en modo desarrollo
-CMD ["npm", "start", "--", "--host", "0.0.0.0"]
+# Ejecuta Angular en primer plano
+CMD ["ng", "serve", "--host", "0.0.0.0", "--port", "4200"]
