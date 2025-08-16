@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { Sucursal } from '../../model/Sucursal';
-import { SucursalDetail } from '../sucursal-detail/sucursal-detail';
 import { ItemProduct } from '../../model/ItemProduct';
 
 @Component({
