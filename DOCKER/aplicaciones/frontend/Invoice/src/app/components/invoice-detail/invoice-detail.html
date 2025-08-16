@@ -1,0 +1,12 @@
+<table class="table table-sm">
+    <thead >
+        <th>PRODUCTO</th>
+        <th>PRECIO UNITARIO</th>
+        <th>CANTIDAD</th>
+    </thead>
+    <tbody>
+        @for (item of items; track $index) {
+            <tr invoice-item [itemC]="item"></tr>
+        }
+    </tbody>
+</table>

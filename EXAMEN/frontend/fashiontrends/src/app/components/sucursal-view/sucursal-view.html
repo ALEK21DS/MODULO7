@@ -1,0 +1,38 @@
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th>SUCURSAL</th>
+      <th>PRODUCTO</th>
+      <th>CATEGORIA</th>
+      <th>Stock</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (item of sucursales; track $index) {
+      <tr>
+        <td>{{ item.numero }}</td>
+        <td>
+          @for (producto of item.items; track $index) {
+            <div>
+              {{ producto.product.name }}
+            </div>
+          }
+        </td>
+        <td>
+          @for (producto of item.items; track $index) {
+            <div>
+                {{producto.product.category.name}}
+            </div>
+          }
+        </td>
+        <td>
+          @for (producto of item.items; track $index) {
+            <div>
+              {{ producto.quantity}}
+            </div>
+          }
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>
